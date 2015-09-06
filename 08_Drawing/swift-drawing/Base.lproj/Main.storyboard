@@ -16,6 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sWT-IU-nZH" customClass="drawView" customModule="swift_drawing" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="84" width="320" height="490"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5KX-ZJ-vhq">
                                 <rect key="frame" x="137" y="20" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.36484888980000002" green="0.51881167760000002" blue="0.87942023030000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -30,14 +34,13 @@
                                     <action selector="claerTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="haf-Qn-RQ7"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sWT-IU-nZH">
-                                <rect key="frame" x="0.0" y="84" width="320" height="490"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="drawViewArea" destination="sWT-IU-nZH" id="L14-TY-KIi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

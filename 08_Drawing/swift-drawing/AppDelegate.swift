@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  swift-drawing
 //
-//  Created by yutaka on 2015/09/06.
-//  Copyright (c) 2015年 Yutaka. All rights reserved.
+//  Created by Yutaka Sano on 2015/09/07.
+//  Copyright (c) 2015年 Yutaka Sano. All rights reserved.
 //
 
 import UIKit

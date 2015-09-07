@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Swift-Capture
 //
-//  自分の位置を取得してMapViewに表示→ボタン押下で地図表示キャプチャ保存
+//  自分の位置を取得してMapViewに表示→ボタン押下で地図表示キャプチャ保存→twitter投稿
 //
 //  Created by Yutaka Sano on 2015/09/07.
 //  Copyright (c) 2015年 Yutaka Sano. All rights reserved.
@@ -10,12 +10,13 @@
 import UIKit
 import MapKit
 import CoreLocation
-
+import Social
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
 	@IBOutlet var mapView: MKMapView!
 	var myLocationManager: CLLocationManager!
+    var myComposeView : SLComposeViewController!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -216,6 +217,21 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         println(image)
         // PhotoAlbumに保存
         UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo:", nil)
+        
+        
+        //twitterキャプチャした画像をtwitterに投稿
+        // SLComposeViewControllerのインスタンス化.
+        // ServiceTypeをTwitterに指定.
+        myComposeView = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+        
+        // 投稿するテキストを指定.
+        myComposeView.setInitialText("Twitter Test from Swift")
+        
+        // 投稿する画像を指定.
+        myComposeView.addImage(image)
+        
+        // myComposeViewの画面遷移.
+        self.presentViewController(myComposeView, animated: true, completion: nil)
         
     }
     

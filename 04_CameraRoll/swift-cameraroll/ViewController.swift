@@ -53,7 +53,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // 写真を選択した時に呼ばれる
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         if info[UIImagePickerControllerOriginalImage] != nil {
-            var image = info[UIImagePickerControllerOriginalImage] as UIImage
+            var image = info[UIImagePickerControllerOriginalImage] as! UIImage
             println(image)
             myImageView.image = image
         }

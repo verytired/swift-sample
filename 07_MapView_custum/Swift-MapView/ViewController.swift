@@ -58,7 +58,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 
 		// 配列から現在座標を取得.
 		var myLocations: NSArray = locations as NSArray
-		var myLastLocation: CLLocation = myLocations.lastObject as CLLocation
+		var myLastLocation: CLLocation = myLocations.lastObject as! CLLocation
 		var myLocation: CLLocationCoordinate2D = myLastLocation.coordinate
 
 		// 縮尺.
